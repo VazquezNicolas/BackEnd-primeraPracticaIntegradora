@@ -1,0 +1,32 @@
+<form action="/api/realtimeproducts" method="post">
+<h2>Agregar producto</h2>
+    <input type="title" name="title" placeholder="title">
+    <input type="description" name="description"  placeholder="description">
+    <input type="price" name="price"  placeholder="price">
+    <input type="thumbnail" name="thumbnail"  placeholder="thumbnail">
+    <input type="code" name="code"  placeholder="code">
+    <input type="stock" name="stock"  placeholder="stock">
+    <input type="status" name="status"  placeholder="status">
+    <input type="category" name="category"  placeholder="category">
+    <button type="submit" id ="button-text">Agregar producto</button>
+
+</form>
+
+<form action="/js/index.js" method="post">
+<h2>Eliminar Producto</h2>
+    <input type="pid" name="pid" placeholder="Id del producto a eliminar">
+
+    <button type="submit">Eliminar producto</button>
+</form>
+
+<h2>Lista de productos en tiempo real</h1>
+{{#each respuesta}}
+<br></br>
+<h3> Titulo: {{this.title}} </h2>
+<h4>ID: {{this.id}} </h4>
+<h4>Descripcion: {{this.description}} </h4>
+{{/each}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
+
